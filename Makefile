@@ -5,15 +5,16 @@
 ## Makefile
 ##
 
-BIN		=	kbenchmark
+BIN		=	kbench
 
 TEST	=	unit_tests
 
-INCLUDE 	=	kbenchmark/include/									\
+INCLUDE 	=	kbenchmark/include/								\
 
-SRC			=	kbenchmark/src/						\
+SRC			=	kbenchmark/src/odd/odd.cpp						\
+
 SRC_MAIN	=	$(SRC)											\
-				main.cpp										\
+				kbenchmark/src/main.cpp
 
 SRC_TEST	=	$(SRC)											\
 
