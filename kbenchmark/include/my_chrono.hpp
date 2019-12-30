@@ -15,11 +15,10 @@ typedef std::chrono::high_resolution_clock Clock;
 
 class my_chrono {
   public:
-    // Variables
-    Clock::time_point start_time = Clock::now();
-
     // Fonctions
     void reset();
+    void start();
+    void stop();
     size_t elapsed_ns();
     size_t elapsed_ms();
 
@@ -32,6 +31,10 @@ class my_chrono {
     ~my_chrono();
 
   private:
+    // Variables
+    Clock::time_point start_time = Clock::now();
+    Clock::time_point stop_time = Clock::now();
+    bool is_started = false;
   protected:
 };
 

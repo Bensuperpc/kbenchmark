@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.c": "cpp",
+        "*.h": "cpp",
+        "Makefile": "makefile",
+        "memory": "cpp",
+        "random": "cpp",
+        "optional": "cpp",
+        "chrono": "cpp"
+    }
+}

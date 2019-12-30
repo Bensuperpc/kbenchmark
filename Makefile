@@ -12,6 +12,7 @@ TEST	=	unit_tests
 INCLUDE 	=	kbenchmark/include/								\
 
 SRC			=	kbenchmark/src/odd/odd.cpp						\
+				kbenchmark/src/my_chrono.cpp					\
 
 SRC_MAIN	=	$(SRC)											\
 				kbenchmark/src/main.cpp
@@ -60,7 +61,15 @@ branches_run: tests_run
 
 coverage_html_run: CPPFLAGS += --coverage
 coverage_html_run: tests_run
-	$(GCOVR) --html --html-details -o coverage.html 
+	$(GCOVR) --html --html-details -o coverage.html
+
+gdb: CPPFLAGS += -O0 -g3 -ggdb3
+gdb:$(BIN)
+	gdb ./$(BIN)
+
+valgrind: CPPFLAGS += -g3 -O0
+valgrind:$(BIN)
+	valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all -v ./$(BIN)
 
 re:	fclean all
 
