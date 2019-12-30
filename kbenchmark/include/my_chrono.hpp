@@ -34,7 +34,6 @@ class my_chrono {
     // Variables
     Clock::time_point start_time = Clock::now();
     Clock::time_point stop_time = Clock::now();
-    bool is_started = false;
   protected:
 };
 
