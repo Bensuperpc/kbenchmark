@@ -67,7 +67,7 @@ gdb: CPPFLAGS += -O0 -g3 -ggdb3
 gdb:$(BIN)
 	gdb ./$(BIN)
 
-valgrind: CPPFLAGS += -g3 -O0
+valgrind: CPPFLAGS += -g3 -O0 -ggdb3
 valgrind:$(BIN)
 	valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all -v ./$(BIN)
 

@@ -11,12 +11,13 @@
 #include <cstdint>
 
 class Odd {
-  public:
+public:
     Odd();
     // Destructeurs
     ~Odd();
-  private:
-  protected:
+
+private:
+protected:
 };
 
 #endif
