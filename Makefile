@@ -29,16 +29,16 @@ GCNOS		=	$(SRC:%.cpp=%.gcno)  $(SRC_TEST:%.cpp=%.gcno)
 CXX			=	g++
 
 CPPFLAGS	=	-W -Wall -Wpedantic -Wextra -Wshadow -Wstrict-overflow=5 -Wmissing-declarations -Wundef	\
-				-Wstack-protector -Wconversion -Wno-unused-parameter -march=native -pipe -std=c++14		\
+				-Wstack-protector -Wno-unused-parameter -march=native -pipe -std=c++14		\
 				-lpthread -I $(INCLUDE)
-# -Werror  -Wno-unused-result -Wold-style-cast	
+# -Werror  -Wno-unused-result -Wold-style-cast	-Wconversion
 
 RM			=	rm -f
 
 GCOVR		=	gcovr -r . --exclude tests/
 
 
-all: CPPFLAGS += -O3
+all: CPPFLAGS += -O2
 all:$(BIN)
 
 $(BIN): $(OBJ) 

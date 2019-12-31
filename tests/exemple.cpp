@@ -10,7 +10,6 @@
 #include <iostream>
 #include <sstream>
 
-
 int error(void);
 void redirect_all_stdout(void);
 
